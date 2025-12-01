@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:33:42 by julauren          #+#    #+#             */
-/*   Updated: 2025/10/24 16:48:40 by julauren         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:22:24 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <stdarg.h>
+
+/*===============LIBFT===============*/
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -51,5 +54,12 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/*==============PRINTF==============*/
+
+int		ft_printf(const char *str, ...);
+int		ft_putstr_pt(char *str, int fd);
+int		ft_putchar_pt(char c, int fd);
+int		ft_putnbr(long nbr, int base, int p, int lc);
 
 #endif
