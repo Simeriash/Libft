@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:33:42 by julauren          #+#    #+#             */
-/*   Updated: 2025/12/01 16:22:24 by julauren         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:45:32 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,14 @@ char	**ft_split(const char *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
+int		ft_putchar_fd(char c, int fd);
+ssize_t	ft_putstr_fd(char *str, int fd);
+ssize_t	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 /*==============PRINTF==============*/
 
 int		ft_printf(const char *str, ...);
-int		ft_putstr_pt(char *str, int fd);
-int		ft_putchar_pt(char c, int fd);
 int		ft_putnbr(long nbr, int base, int p, int lc);
 
 #endif
