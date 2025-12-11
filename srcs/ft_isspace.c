@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 07:20:56 by julauren          #+#    #+#             */
+/*   Created: 2025/12/11 13:44:19 by julauren          #+#    #+#             */
 /*   Updated: 2025/12/11 13:46:02 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_isspace(const char *str, int i)
 {
-	int	i;
-	int	num;
-	int	sign;
-
-	i = 0;
-	num = 0;
-	sign = 1;
-	while (ft_isspace(str, i))
-		i++;
-	if (str[i] == '-')
-		sign = -sign;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (ft_isdigit(str[i]))
-	{
-		num = num * 10 + str[i] - 48;
-		i++;
-	}
-	return (sign * num);
+	if ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		return (1);
+	return (0);
 }
