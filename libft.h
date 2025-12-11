@@ -18,6 +18,11 @@
 # include <stdint.h>
 # include <stdarg.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 128
+
+# endif
+
 /*===============LIBFT===============*/
 
 int		ft_isalpha(int c);
@@ -56,9 +61,13 @@ ssize_t	ft_putstr_fd(char *str, int fd);
 ssize_t	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-/*==============PRINTF==============*/
+/*===============PRINTF==============*/
 
 int		ft_printf(const char *str, ...);
 int		ft_putnbr(long nbr, int base, int p, int lc);
+
+/*================GNL================*/
+
+char	*get_next_line(int fd);
 
 #endif
