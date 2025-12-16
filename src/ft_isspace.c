@@ -6,15 +6,15 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:44:19 by julauren          #+#    #+#             */
-/*   Updated: 2025/12/12 15:32:46 by julauren         ###   ########.fr       */
+/*   Updated: 2025/12/16 10:56:37 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_isspace(const char *str, int i)
+int	ft_isspace(int c)
 {
-	if ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
 }
