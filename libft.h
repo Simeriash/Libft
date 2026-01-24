@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:33:42 by julauren          #+#    #+#             */
-/*   Updated: 2025/12/17 17:44:43 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/24 07:30:18 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, int *ctrl);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *str);
 char	*ft_substr(const char *str, unsigned int start, size_t len);
