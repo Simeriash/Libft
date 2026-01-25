@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 10:51:43 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 15:59:36 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 16:06:16 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_puttab(char **tab)
 	len = 0;
 	while (tab[i])
 	{
-		len += ft_putstr_fd(tab[i], 1);
+		len += ft_putendl_fd(tab[i], 1);
 		i++;
 	}
 	return (len);
