@@ -6,11 +6,26 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 10:51:43 by julauren          #+#    #+#             */
-/*   Updated: 2025/12/12 15:37:42 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 15:59:36 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+
+static int	ft_puttab(char **tab)
+{
+	int	i;
+	int	len;
+
+	i = 0;
+	len = 0;
+	while (tab[i])
+	{
+		len += ft_putstr_fd(tab[i], 1);
+		i++;
+	}
+	return (len);
+}
 
 static int	ft_type(va_list param, const char *str, int *i)
 {
@@ -34,6 +49,8 @@ static int	ft_type(va_list param, const char *str, int *i)
 		len = ft_putnbr(va_arg(param, unsigned int), 16, 0, 0);
 	if (str[*i] == '%')
 		len = ft_putchar_fd('%', 1);
+	if (str[*i] == 't')
+		len = ft_puttab(va_arg(param, char **));
 	return (len);
 }
 
