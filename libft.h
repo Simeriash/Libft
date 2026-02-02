@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:33:42 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/24 07:30:18 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/02 11:30:22 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,5 @@ void	ft_putnbr_fd(int n, int fd);
 
 int		ft_printf(const char *str, ...);
 int		ft_putnbr(long nbr, int base, int p, int lc);
-
-/*================GNL================*/
-
-char	*get_next_line(int fd);
-size_t	ft_strchr_gnl(const char *s);
-char	*ft_strjoin_gnl(const char *s1, const char *s2);
 
 #endif
