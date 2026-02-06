@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:33:42 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/02 11:30:22 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/06 13:53:01 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@
 # include <stdint.h>
 # include <limits.h>
 # include <stdarg.h>
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 128
-
-# endif
+# include <fcntl.h>
 
 /*===============LIBFT===============*/
 
@@ -61,6 +57,7 @@ int		ft_putchar_fd(char c, int fd);
 ssize_t	ft_putstr_fd(char *str, int fd);
 ssize_t	ft_putendl_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*ft_read_file(char *str);
 
 /*===============PRINTF==============*/
 
