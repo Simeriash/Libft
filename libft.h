@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:33:42 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/12 18:25:18 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/14 13:49:38 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <limits.h>
 # include <stdarg.h>
 # include <fcntl.h>
+
+# define BUFFER_SIZE 50
 
 /*===============LIBFT===============*/
 

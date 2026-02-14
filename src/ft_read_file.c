@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 13:43:47 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/14 13:20:14 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/14 13:50:50 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	ft_fill_file(char *buffer, char **readed_file, int fd)
 	size = 1;
 	while (size)
 	{
-		size = read(fd, buffer, 50);
+		size = read(fd, buffer, BUFFER_SIZE);
 		if (size == -1 || (size == 0 && *readed_file == NULL))
 		{
 			ft_free(buffer, readed_file, fd);
@@ -61,7 +61,7 @@ char	*ft_read_file(char *str)
 	char	*buffer;
 
 	readed_file = NULL;
-	buffer = malloc(sizeof(*buffer) * 51);
+	buffer = malloc(sizeof(*buffer) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
 	fd = open(str, O_RDONLY);
