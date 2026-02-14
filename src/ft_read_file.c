@@ -6,13 +6,13 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 13:43:47 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/06 14:59:15 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/14 13:20:14 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static void	ft_free(char *buffer, char **readed_file)
+static void	ft_free(char *buffer, char **readed_file, int fd)
 {
 	if (buffer)
 		free(buffer);
@@ -21,6 +21,8 @@ static void	ft_free(char *buffer, char **readed_file)
 		free(readed_file);
 		readed_file = NULL;
 	}
+	if (fd >= 0)
+		close(fd);
 }
 
 static void	ft_fill_file(char *buffer, char **readed_file, int fd)
@@ -34,7 +36,7 @@ static void	ft_fill_file(char *buffer, char **readed_file, int fd)
 		size = read(fd, buffer, 50);
 		if (size == -1 || (size == 0 && *readed_file == NULL))
 		{
-			ft_free(buffer, readed_file);
+			ft_free(buffer, readed_file, fd);
 			return ;
 		}
 		if (size == 0)
@@ -43,7 +45,7 @@ static void	ft_fill_file(char *buffer, char **readed_file, int fd)
 		tmp = ft_strjoin(*readed_file, buffer);
 		if (!tmp)
 		{
-			ft_free(buffer, readed_file);
+			ft_free(buffer, readed_file, fd);
 			return ;
 		}
 		free(*readed_file);
@@ -65,7 +67,7 @@ char	*ft_read_file(char *str)
 	fd = open(str, O_RDONLY);
 	if (fd == -1)
 	{
-		free(buffer);
+		ft_free(buffer, NULL, -1);
 		return (NULL);
 	}
 	ft_fill_file(buffer, &readed_file, fd);
