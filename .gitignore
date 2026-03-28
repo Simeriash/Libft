@@ -1,5 +1,5 @@
-.vscode/
-a.out
-main.c
-*.a
 obj/
+*.out
+*.a
+*.o
+main.c
